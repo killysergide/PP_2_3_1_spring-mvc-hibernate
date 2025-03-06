@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>User Details</title>
+</head>
+<body>
+<h1>User Details</h1>
+
+<div th:if="${user != null}">
+    <h2 th:text="${user.getName()}">Name</h2>
+    <p><strong>Age:</strong> <span th:text="${user.getAge()}"></span></p>
+
+    <a th:href="@{/}">Back to Users List</a>
+</div>
+
+<div th:if="${user == null}">
+    <p>User not found.</p>
+    <a th:href="@{/}">Back to Users List</a>
+</div>
+
+</body>
+</html>
